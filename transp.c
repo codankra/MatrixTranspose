@@ -54,6 +54,6 @@ int main(int argc, char **argv){
 
 	gettimeofday(&t1, 0); //End timer
 	long elapsedMs = (t1.tv_sec-t0.tv_sec)*1000000 + t1.tv_usec-t0.tv_usec;
-	long elapsed = t1.tv_sec-t0.tv_sec;
-	printf("Microseconds: %lu\nSeconds: %lu\n", elapsedMs, elapsed);
+	int elapsed = t1.tv_sec-t0.tv_sec;
+	printf("Microseconds: %lu\nSeconds: %i\n", elapsedMs, elapsed);
 }
