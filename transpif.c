@@ -15,8 +15,7 @@ int main(int argc, char **argv){
 			"Usage: program_name matrix_height matrix_width block_width\n");
 		return -1;
 	}
-	struct timeval t0, t1;
-	gettimeofday(&t0, 0); //Start timer
+	
 
 	int mHeight = atoi(argv[1]);
 	int mWidth = atoi(argv[2]);
@@ -35,6 +34,8 @@ int main(int argc, char **argv){
 	}
 	int outputPos, matrixPos, i, j, z, k;
 	
+	struct timeval t0, t1;
+	gettimeofday(&t0, 0); //Start timer
 	
 	for (k = 0; k < ceil(((float)mHeight)/((float)blockW)); k++){
 		for (z = 0; z < ceil(((float)mWidth)/((float)blockW)); z++){
@@ -64,6 +65,7 @@ int main(int argc, char **argv){
 			}
 		}
 	}
+	gettimeofday(&t1, 0); //End timer
 	
 
 	//FREE / CLOSE (✓)
@@ -71,8 +73,8 @@ int main(int argc, char **argv){
 	free(output);
 	//WOW I added this in a branch
 	//The commits before this are me figuring out how to use branches... feel free to disregard
-
-	gettimeofday(&t1, 0); //End timer
+	//Here I am wanting more concrete lasting evidence of the newbranch branch
+	
 	long elapsedMs = (t1.tv_sec-t0.tv_sec)*1000000 + t1.tv_usec-t0.tv_usec;
 	int elapsed = t1.tv_sec-t0.tv_sec;
 	printf("Microseconds: %lu\nSeconds: %i\n", elapsedMs, elapsed);
