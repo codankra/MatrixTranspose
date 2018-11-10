@@ -69,6 +69,8 @@ int main(int argc, char **argv){
 	//FREE / CLOSE (✓)
 	free(matrix);
 	free(output);
+	//WOW I added this in a branch
+	//The commits before this are me figuring out how to use branches... feel free to disregard
 
 	gettimeofday(&t1, 0); //End timer
 	long elapsedMs = (t1.tv_sec-t0.tv_sec)*1000000 + t1.tv_usec-t0.tv_usec;
